@@ -4,7 +4,7 @@ const increment = document.querySelector('[data-action="increment"]');
 const value = document.querySelector("#value");
 
 decrement.addEventListener("click", () => {
-  counterValue -= 1;
+  counterValue --;
   value.textContent = counterValue;
 });
 increment.addEventListener("click", () => {

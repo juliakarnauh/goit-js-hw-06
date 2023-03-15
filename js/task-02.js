@@ -8,10 +8,10 @@ const ingredients = [
 ];
 
 const Salad = document.querySelector('#ingredients');
-
-ingredients.forEach(ingredient => {
+const product = ingredients.map((ingredient) => {
   let listIngredients = document.createElement('li');
   listIngredients.textContent = ingredient;
   listIngredients.classList.add('item');
-  Salad.appendChild(listIngredients);
+return listIngredients
 });
+Salad.append(...product);

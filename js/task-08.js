@@ -1,12 +1,13 @@
 const form = document.querySelector(".login-form");
 const message = "Всі поля повинні бути заповнені!";
+let usersInfo = {};
 form.addEventListener("submit", (handleSubmit) => {
   handleSubmit.preventDefault();
-  let usersInfo = {
-    email: form.elements.email.value,
-    password: form.elements.password.value,
-  };
-
+  for (let element of form.elements) {
+    if (element.name) {
+      usersInfo[element.name] = element.value;
+    }
+  }
   if (form.elements.email.value === "" || form.elements.password.value === "") {
     alert(message);
   }
